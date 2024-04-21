@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Captioning Result</title>
+</head>
+<body>
+    <h2>Weather Predictor</h2>
+    <!-- Display the uploaded image -->
+    <img src="{{ url_for('uploaded_file', filename=image) }}" alt="Uploaded Image">
+    
+    <!-- Display the predicted caption -->
+    <p><strong>Predicted Caption:</strong> {{ caption }}</p>
+    
+    <!-- Play the speech output -->
+    <audio controls>
+        <!-- Use the URL for the speech output -->
+        <source src="{{ url_for('speech_file', filename=speech) }}" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+</body>
+</html>
